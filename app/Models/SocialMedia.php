@@ -14,7 +14,6 @@ class SocialMedia extends Model
         'twitter',
         'instagram',
         'whatsApp',
-        'user_id'
             ];
         public function user()
         {

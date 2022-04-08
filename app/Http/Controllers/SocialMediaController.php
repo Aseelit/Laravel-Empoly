@@ -55,7 +55,7 @@ class SocialMediaController extends Controller
         $soical->whatsApp=$request->whatsApp;
         $soical->user_id=Auth::user()->id;
         $soical->save();
-        return redirect()->route('Soical.index');
+        return redirect()->route('profile.index');
     }
 
     /**
@@ -93,7 +93,7 @@ class SocialMediaController extends Controller
     {
         $socialMedia=SocialMedia::find($id);
         $socialMedia->update($request->all());
-        return redirect()->route('Soical.index')->with('success','Social Media Edit Successfly');
+        return redirect()->route('profile.index')->with('success','Social Media Edit Successfly');
         
     }
 

@@ -406,21 +406,14 @@
 		  class="dropdown-menu dropdown-menu-end"
 		  aria-labelledby="dropdown-user"
 		>
-		  <a class="dropdown-item" href="page-profile.html"
-			><i class="me-50" data-feather="user"></i> Profile</a
-		  ><a class="dropdown-item" href="app-email.html"
-			><i class="me-50" data-feather="mail"></i> Inbox</a
-		  ><a class="dropdown-item" href="app-todo.html"
-			><i class="me-50" data-feather="check-square"></i> Task</a
-		  ><a class="dropdown-item" href="app-chat.html"
-			><i class="me-50" data-feather="message-square"></i> Chats</a
+		  <a class="dropdown-item" href="{{ route('profile.index') }}"
+			><i class="me-50" data-feather="user"></i>my Profile</a
 		  >
+		  
+		  
+		
 		  <div class="dropdown-divider"></div>
-		  <a class="dropdown-item" href="page-account-settings-account.html"
-			><i class="me-50" data-feather="settings"></i> Settings</a
-		  ><a class="dropdown-item" href="page-pricing.html"
-			><i class="me-50" data-feather="credit-card"></i> Pricing</a
-		  ><a class="dropdown-item" href="page-faq.html"
+		<a class="dropdown-item" href="page-faq.html"
 			><i class="me-50" data-feather="help-circle"></i> FAQ</a
 		  ><a class="dropdown-item"  href="{{ route('logout') }}"
 		  onclick="event.preventDefault();
