@@ -10,72 +10,7 @@
       <div class="content-body">
         <section class="app-user-view-connections">
 <div class="row">
-  <!-- User Sidebar -->
-  <div class="col-xl-4 col-lg-5 col-md-5 order-1 order-md-0">
-    <!-- User Card -->
-    <div class="card">
-      <div class="card-body">
-        <div class="user-avatar-section">
-          <div class="d-flex align-items-center flex-column">
-            <img
-              class="img-fluid rounded mt-3 mb-2"
-              src="{{ asset('app-assets/images/10.png') }}"
-              height="110"
-              width="110"
-              alt="User avatar"
-            />
-            <div class="user-info text-center">
-              <h4>{{ $users->name }}</h4>
-              @if(!empty($users->getRoleNames()))
-              @foreach($users->getRoleNames() as $v)
-              <span class="badge bg-light-secondary">{{ $v }}</span>
-              @endforeach
-              @endif
-            </div>
-          </div>
-        </div>
-       
-        <h4 class="fw-bolder border-bottom pb-50 mb-1">Details</h4>
-        <div class="info-container">
-          <ul class="list-unstyled">
-            <li class="mb-75">
-              <span class="fw-bolder me-25">Username:</span>
-              <span>{{ $users->name }}</span>
-            </li>
-            <li class="mb-75">
-              <span class="fw-bolder me-25">Billing Email:</span>
-
-              <span>{{ $users->email }}</span>
-            </li>
-            
-            <li class="mb-75">
-              <span class="fw-bolder me-25">Role:</span>
-              @if(!empty($users->getRoleNames()))
-              @foreach($users->getRoleNames() as $v)
-              <span>{{ $v }}</span>
-              @endforeach
-              @endif
-           
-            </li>
-           
-            <li class="mb-75">
-              <span class="fw-bolder me-25">Contact:</span>
-              <span>+1 (609) 933-44-22</span>
-            </li>
-            
-           
-          </ul>
-         
-        </div>
-      </div>
-    </div>
-    <!-- /User Card -->
-    
-  </div>
-  {{--  <!--/ User Sidebar -->  --}}
-
-  {{--  <!-- User Content -->  --}}
-  <div class="col-xl-8 col-lg-7 col-md-7 order-0 order-md-1">
+  <div class="col-xl-8 col-lg-7 col-md-7 order-0 order-md-0">
     <!-- User Pills -->
     <ul class="nav nav-pills mb-2">
       <li class="nav-item">
@@ -84,11 +19,22 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="@{{ route('Soical.edit',$users->social->id) }}">
+        @if(@$users->social->id=='')
+          
+        <a class="nav-link" href="{{ route('Soical.create') }}">
+          <span class="fw-bold">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user font-medium-3 me-50"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            create Profail</span>
+        </a>
+      
+      @else
+
+        <a class="nav-link" href="{{ route('Soical.edit',$users->social->id) }}">
           <span class="fw-bold">
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user font-medium-3 me-50"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
             Update Profail</span>
         </a>
+        @endif
       </li>
 
      
@@ -213,7 +159,65 @@
     </div>
     <!--/ connection -->
   </div>
-  <!--/ User Content -->
+
+  <div class="col-xl-4 col-lg-5 col-md-5 order-1 order-md-1">
+    <!-- User Card -->
+    <div class="card">
+      <div class="card-body">
+        <div class="user-avatar-section">
+          <div class="d-flex align-items-center flex-column">
+            <img
+              class="img-fluid rounded mt-3 mb-2"
+              src="{{ asset('app-assets/images/10.png') }}"
+              height="110"
+              width="110"
+              alt="User avatar"
+            />
+            <div class="user-info text-center">
+              <h4>{{ $users->name }}</h4>
+              @if(!empty($users->getRoleNames()))
+              @foreach($users->getRoleNames() as $v)
+              <span class="badge bg-light-secondary">{{ $v }}</span>
+              @endforeach
+              @endif
+            </div>
+          </div>
+        </div>
+       
+        <h4 class="fw-bolder border-bottom pb-50 mb-1">Details</h4>
+        <div class="info-container">
+          <ul class="list-unstyled">
+            <li class="mb-75">
+              <span class="fw-bolder me-25">Username:</span>
+              <span>{{ $users->name }}</span>
+            </li>
+            <li class="mb-75">
+              <span class="fw-bolder me-25"> Email:</span>
+
+              <span>{{ $users->email }}</span>
+            </li>
+            
+            <li class="mb-75">
+              <span class="fw-bolder me-25">Role:</span>
+              @if(!empty($users->getRoleNames()))
+              @foreach($users->getRoleNames() as $v)
+              <span>{{ $v }}</span>
+              @endforeach
+              @endif
+           
+            </li>
+           
+            
+           
+          </ul>
+         
+        </div>
+      </div>
+    </div>
+    <!-- /User Card -->
+    
+  </div>
+
 </div>
 </section>
  

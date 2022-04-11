@@ -18,10 +18,10 @@ class SocialMediaController extends Controller
     
     public function __construct()
     {
-        $this->middleware('permission:soical-list|soical-create|soical-edit|soical-delete', ['only' => ['index', 'show']]);
-        $this->middleware('permission:soical-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:soical-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:soical-delete', ['only' => ['destroy']]);
+        // $this->middleware('permission:soical-list|soical-create|soical-edit|soical-delete', ['only' => ['index', 'show']]);
+        // $this->middleware('permission:soical-create', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:soical-edit', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:soical-delete', ['only' => ['destroy']]);
     }
     public function index()
     {

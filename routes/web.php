@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfailController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SocialMediaController;
@@ -30,7 +29,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('products', ProductController::class);
     Route::resource('Soical', SocialMediaController::class);
     Route::resource('profile', ProfailController::class);
 
